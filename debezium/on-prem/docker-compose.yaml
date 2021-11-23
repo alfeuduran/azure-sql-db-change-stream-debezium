@@ -7,7 +7,7 @@ services:
     environment:
      - BOOTSTRAP_SERVERS=${EH_NAME}.servicebus.windows.net:9093
      - GROUP_ID=1
-     - CONFIG_STORAGE_TOPIC=debezium_configs
+     - CONFIG_STORAGE_TOPIC=debezium_config
      - OFFSET_STORAGE_TOPIC=debezium_offsets
      - STATUS_STORAGE_TOPIC=debezium_statuses
      - CONNECT_KEY_CONVERTER_SCHEMAS_ENABLE=false

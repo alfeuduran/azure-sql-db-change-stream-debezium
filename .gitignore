@@ -333,3 +333,4 @@ ASALocalRun/
 **.env
 __blobstorage__/
 __azurite_db_*
+debezium/on-prem/.env.sample

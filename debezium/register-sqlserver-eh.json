@@ -1,13 +1,13 @@
 {
     "name": "wwi",
     "config": {
-        "snapshot.mode": "schema_only",
+        "snapshot.mode": "initial",
         "connector.class": "io.debezium.connector.sqlserver.SqlServerConnector",
-        "database.hostname": "dmmssqlsrv.database.windows.net",
+        "database.hostname": "sqlserveralfeu.database.windows.net",
         "database.port": "1433",
         "database.user": "debezium-wwi",
         "database.password": "Abcd1234!",
-        "database.dbname": "WideWorldImportersStandardCDC",
+        "database.dbname": "WideWorldImporters-Standard",
         "database.server.name": "SQLAzure",
         "tasks.max": "1",
         "decimal.handling.mode": "string",
@@ -17,6 +17,7 @@
         "transforms.Reroute.topic.regex": "(.*)",
         "transforms.Reroute.topic.replacement": "wwi",
         "tombstones.on.delete": false,
-        "database.history": "io.debezium.relational.history.MemoryDatabaseHistory"
+        "database.history": "io.debezium.relational.history.MemoryDatabaseHistory",
+        "signal.data.collection": "dbo.debezium_signal"
     }
 }
