@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kafka-debezium-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kafka-debezium
+  template:
+    metadata:
+      labels:
+        app: kafka-debezium
+    spec:
+      containers:
+      - name: kafka-debezium-container
+        image: feuimages.azurecr.io/kafka-debezium-image
+        ports:
+        - containerPort: 8083
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kafka-debezium-service
+spec:
+  selector:
+    app: kafka-debezium
+  ports:
+  - name: http
+    port: 8083
+    targetPort: 8083
+  type: LoadBalancer
