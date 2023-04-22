@@ -1,7 +1,7 @@
 FROM debezium/connect:1.6
 
 ENV EH_NAME=labalfeu
-ENV EH_CONNECTION_STRING=Endpoint=sb://labalfeu.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=XXXX
+ENV EH_CONNECTION_STRING=Endpoint=sb://labalfeu.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=bNfER7zuw8oRRLp22KOB5r+XahaVrgY2h+AEhKFFEGE=
 ENV ConnectionString = "$ConnectionString"
 
 
@@ -25,3 +25,4 @@ ENV CONNECT_CONSUMER_SASL_JAAS_CONFIG="org.apache.kafka.common.security.plain.Pl
 
 # ENTRYPOINT echo $CONNECT_SASL_JAAS_CONFIG
 EXPOSE 8083
+
